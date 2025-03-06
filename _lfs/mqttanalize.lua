@@ -26,7 +26,7 @@ if killtop and #killtop ~= 0 then
 
 	if com[1] == 'sw01' and (com[2] == 'On' or com[2] == 'Off') then
 		wth.switch = com[2]
-		prt('mqttanalize Got Switch "sw01 "'..com[2])
+		-- prt('mqttanalize Got Switch "sw01 "'..com[2])
 	
 	elseif com[1] == 'outtemp' then
 		if com[2] then

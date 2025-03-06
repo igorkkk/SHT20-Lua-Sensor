@@ -63,7 +63,11 @@ do
     }
 
     local ok, json_str = pcall(sjson.encode, disc)
-    if ok then prt(json_str, '\n', json_str2) else prt('! Lost JSON') end
+    if ok then 
+        -- prt(json_str, '\n') 
+    else 
+        prt('! Lost JSON') 
+    end
 
     if ok and dat.broker then
         m:publish(top, json_str, 2, 0,
