@@ -4,4 +4,6 @@
 
 В железке реализован модуль MQTT Discovery для Home Assistant.
 
+![Home Assistant](docs/hav.png)
+
 Отдельная благодарность [Birte Friesel](https://github.com/derf?tab=repositories&q=&type=&language=lua&sort=) за работу с Lua, кое-что заимствовано оттуда.  
