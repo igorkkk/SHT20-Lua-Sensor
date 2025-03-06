@@ -1,0 +1,7 @@
+{
+  "compilerExecutable": ".\\.luacross\\luac.cross.exe",
+  "include": [
+    ".\\_lfs\\*.lua"
+  ],
+  "outDir": ".\\.output"
+}

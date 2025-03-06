@@ -1,0 +1,169 @@
+
+homeassistant/sensor/0x00158D00051E71E0/battery/config:
+{
+"unit_of_measurement":"%",
+"state_class":"measurement",
+"device_class":"battery",
+"value_template":"{{ value_json.battery }}",
+"state_topic":"ZigbeeA0C0Wite/0x00158D00051E71E0",
+"name":"0x00158D00051E71E0_battery",
+"object_id":"0x00158D00051E71E0_battery",
+"device":
+    {
+    "identifiers": ["ZigbeeA0C0Wite0x00158D00051E71E0"],
+    "name":"0x00158D00051E71E0",
+    "sw_version":"SLS Gateway 2023.04.23d1",
+    "model":"lumi.sensor_cube.aqgl01",
+    "manufacturer":""
+    },
+"unique_id":"0x00158D00051E71E0_battery",
+"availability_topic":"ZigbeeA0C0Wite/bridge/state"
+}
+
+
+homeassistant/sensor/0x00158D00051E71E0/voltage/config
+{
+"unit_of_measurement":"V",
+"state_class":"measurement",
+"device_class":"voltage",
+"value_template":"{{ value_json.voltage }}",
+"state_topic":"ZigbeeA0C0Wite/0x00158D00051E71E0",
+"name":"0x00158D00051E71E0_voltage",
+"object_id":"0x00158D00051E71E0_voltage",
+"device":
+    {
+    "identifiers": ["ZigbeeA0C0Wite0x00158D00051E71E0"],
+    "name":"0x00158D00051E71E0",
+    "sw_version":"SLS Gateway 2023.04.23d1",
+    "model":"lumi.sensor_cube.aqgl01",
+    "manufacturer":""
+    },
+"unique_id":"0x00158D00051E71E0_voltage",
+"availability_topic":"ZigbeeA0C0Wite/bridge/state"}
+
+
+--------------------
+
+homeassistant/sensor/0xA4C1384EBCD32B38/humidity/config:
+{
+"unit_of_measurement":"%",
+"state_class":"measurement",
+"device_class":"humidity",
+"value_template":"{{ value_json.humidity }}",
+"state_topic":"ZigbeeMos/0xA4C1384EBCD32B38",
+"name":"0xA4C1384EBCD32B38_humidity",
+"object_id":"0xA4C1384EBCD32B38_humidity",
+"device":
+    {
+        "identifiers": ["ZigbeeMos0xA4C1384EBCD32B38"],
+        "name":"0xA4C1384EBCD32B38",
+        "sw_version":"SLS Gateway 2023.04.23d1",
+        "model":"TS0601",
+        "manufacturer":"_TZE200_znbl8dj5"
+    },
+"unique_id":"0xA4C1384EBCD32B38_humidity",
+"availability_topic":"ZigbeeMos/bridge/state"
+}
+
+homeassistant/sensor/0xA4C1384EBCD32B38/temperature/config:
+{
+    "unit_of_measurement":"°C",
+    "state_class":"measurement", -- !!!!!
+    "device_class":"temperature",
+    "value_template":"{{ value_json.temperature }}",
+    "state_topic":"ZigbeeMos/0xA4C1384EBCD32B38",
+    "name":"0xA4C1384EBCD32B38_temperature",
+    "object_id":"0xA4C1384EBCD32B38_temperature",
+    "device":
+        {
+            "identifiers":["ZigbeeMos0xA4C1384EBCD32B38"],
+            "name":"0xA4C1384EBCD32B38",
+            "sw_version":"SLS Gateway 2023.04.23d1",
+            "model":"TS0601",
+            "manufacturer":"_TZE200_znbl8dj5"
+        },
+    "unique_id":"0xA4C1384EBCD32B38_temperature",
+    "availability_topic":"ZigbeeMos/bridge/state"
+}
+
+
+
+-------------------------------------------
+
+homeassistant/sensor/esp8266_2B3C5E/co2/config:
+{
+    "device":
+        {
+            "connections":[["mac","cc:50:e3:2b:3c:5e"]],
+            "identifiers":["esp8266_2B3C5E"],
+            "model":"ESP8266 + SCD4x",
+            "name":"SCD4x 2B3C5E",
+            "manufacturer":"igorkkk"
+        },
+    "state_topic":"sensor/esp8266_2B3C5E/data",
+    "expire_after":600,
+    "name":"CO₂",
+    "object_id":"esp8266_2B3C5E_co2",
+    "unique_id":"esp8266_2B3C5E_co2",
+    "device_class":"carbon_dioxide",
+    "unit_of_measurement":"ppm",
+    "value_template":"{{value_json.co2}}"
+}
+
+homeassistant/sensor/esp8266_2B3C5E/humidity/config:
+{
+    "device":
+        {"connections":[["mac","cc:50:e3:2b:3c:5e"]],
+        "identifiers":["esp8266_2B3C5E"],
+        "model":"ESP8266 + SCD4x",
+        "name":"SCD4x 2B3C5E",
+        "manufacturer":"igorkkk"
+        },
+    "state_topic":"sensor/esp8266_2B3C5E/data",
+    "expire_after":600,
+    "name":"Humidity",
+    "object_id":"esp8266_2B3C5E_humidity",
+    "unique_id":"esp8266_2B3C5E_humidity",
+    "device_class":"humidity",
+    "unit_of_measurement":"%",
+    "value_template":"{{value_json.humidity}}"
+}
+
+homeassistant/sensor/esp8266_2B3C5E/temperature/config:
+{
+    "device":
+        {
+            "connections":[["mac","cc:50:e3:2b:3c:5e"]],
+            "identifiers":["esp8266_2B3C5E"],
+            "model":"ESP8266 + SCD4x",
+            "name":"SCD4x 2B3C5E",
+            "manufacturer":"igorkkk"
+        },
+    "state_topic":"sensor/esp8266_2B3C5E/data",
+    "expire_after":600,
+    "name":"Temperature",
+    "object_id":"esp8266_2B3C5E_temperature",
+    "unique_id":"esp8266_2B3C5E_temperature",
+    "device_class":"temperature",
+    "unit_of_measurement":"°c",
+    "value_template":"{{value_json.temperature}}"
+}
+
+
+devtb = {
+    "device" =
+        {
+            "identifiers" = ["esp8266_2B3C5E"],
+            "model" = "ESP8266 + SCD4x",
+            "name" = "SCD4x 2B3C5E",
+            "manufacturer" = "igorkkk"
+        },
+    "state_topic" ="sensor/esp8266_2B3C5E/data",
+    "expire_after" = 600,
+    "name" = "Temperature",
+    "object_id" = "esp8266_2B3C5E_temperature",
+    "unique_id" = "esp8266_2B3C5E_temperature",
+    "device_class" = "temperature",
+    "unit_of_measurement" = "°c",
+    "value_template" = "{{value_json.temperature}}"
+}

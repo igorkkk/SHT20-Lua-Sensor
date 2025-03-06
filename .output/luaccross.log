@@ -1,0 +1,72 @@
+
+main <c:\Users\remoteadmin\Documents\___SyncThing\esp\__max7219_esp32_monitorGH\wifi32_cu.lua:0,0> (49 instructions at 01248de0)
+0+ params, 5 slots, 1 upvalue, 0 locals, 22 constants, 2 functions
+	1	[2]	LOADK    	0 -1	; "AP_HOME73"
+	2	[4]	LOADK    	1 -2	; "7740.7740.7740,7740"
+	3	[6]	GETTABUP 	2 0 -3	; - "dat"
+	4	[6]	TEST     	2 1
+	5	[6]	JMP      	0 1	; to 7
+	6	[6]	NEWTABLE 	2 0 0
+	7	[6]	SETTABUP 	0 -3 2	; - "dat"
+	8	[7]	GETTABUP 	2 0 -4	; - "wifi"
+	9	[7]	GETTABLE 	2 2 -5	; "start"
+	10	[7]	CALL     	2 1 1
+	11	[8]	GETTABUP 	2 0 -4	; - "wifi"
+	12	[8]	GETTABLE 	2 2 -6	; "mode"
+	13	[8]	GETTABUP 	3 0 -4	; - "wifi"
+	14	[8]	GETTABLE 	3 3 -7	; "STATION"
+	15	[8]	CALL     	2 2 1
+	16	[10]	GETTABUP 	2 0 -4	; - "wifi"
+	17	[10]	GETTABLE 	2 2 -8	; "sta"
+	18	[10]	GETTABLE 	2 2 -9	; "on"
+	19	[10]	LOADK    	3 -10	; "got_ip"
+	20	[13]	CLOSURE  	4 0	; 01249cf8
+	21	[10]	CALL     	2 3 1
+	22	[15]	GETTABUP 	2 0 -4	; - "wifi"
+	23	[15]	GETTABLE 	2 2 -8	; "sta"
+	24	[15]	GETTABLE 	2 2 -9	; "on"
+	25	[15]	LOADK    	3 -11	; "disconnected"
+	26	[18]	CLOSURE  	4 1	; 010d1058
+	27	[15]	CALL     	2 3 1
+	28	[20]	GETTABUP 	2 0 -12	; - "time"
+	29	[20]	GETTABLE 	2 2 -13	; "settimezone"
+	30	[20]	LOADK    	3 -14	; "EST-3"
+	31	[20]	CALL     	2 2 1
+	32	[21]	GETTABUP 	2 0 -12	; - "time"
+	33	[21]	GETTABLE 	2 2 -15	; "initntp"
+	34	[21]	CALL     	2 1 1
+	35	[23]	GETTABUP 	2 0 -4	; - "wifi"
+	36	[23]	GETTABLE 	2 2 -8	; "sta"
+	37	[23]	GETTABLE 	2 2 -16	; "config"
+	38	[23]	NEWTABLE 	3 0 4
+	39	[24]	SETTABLE 	3 -17 -18	; "auto" true
+	40	[25]	SETTABLE 	3 -19 -18	; "save" true
+	41	[26]	SETTABLE 	3 -20 0	; "ssid" -
+	42	[27]	SETTABLE 	3 -21 1	; "pwd" -
+	43	[28]	LOADBOOL 	4 1 0
+	44	[23]	CALL     	2 3 1
+	45	[29]	GETTABUP 	2 0 -4	; - "wifi"
+	46	[29]	GETTABLE 	2 2 -8	; "sta"
+	47	[29]	GETTABLE 	2 2 -22	; "connect"
+	48	[29]	CALL     	2 1 1
+	49	[30]	RETURN   	0 1
+
+function <c:\Users\remoteadmin\Documents\___SyncThing\esp\__max7219_esp32_monitorGH\wifi32_cu.lua:10,13> (8 instructions at 01249cf8)
+2 params, 5 slots, 1 upvalue, 0 locals, 4 constants, 0 functions
+	1	[11]	GETTABUP 	2 0 -1	; - "print"
+	2	[11]	LOADK    	3 -2	; "NodeMCU Got IP:"
+	3	[11]	GETTABLE 	4 1 -3	; "ip"
+	4	[11]	CALL     	2 3 1
+	5	[12]	GETTABUP 	2 0 -4	; - "dat"
+	6	[12]	GETTABLE 	3 1 -3	; "ip"
+	7	[12]	SETTABLE 	2 -3 3	; "ip" -
+	8	[13]	RETURN   	0 1
+
+function <c:\Users\remoteadmin\Documents\___SyncThing\esp\__max7219_esp32_monitorGH\wifi32_cu.lua:15,18> (6 instructions at 010d1058)
+0 params, 2 slots, 1 upvalue, 0 locals, 5 constants, 0 functions
+	1	[16]	GETTABUP 	0 0 -1	; - "print"
+	2	[16]	LOADK    	1 -2	; "NodeMCU Disconnected"
+	3	[16]	CALL     	0 2 1
+	4	[17]	GETTABUP 	0 0 -3	; - "dat"
+	5	[17]	SETTABLE 	0 -4 -5	; "ip" nil
+	6	[18]	RETURN   	0 1
