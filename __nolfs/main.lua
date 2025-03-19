@@ -4,7 +4,9 @@ WorkTmr = tmr.create()
 local point = 1
 local wt = {}
 wt[1] = {'__askSHT20.lua', 0, 30}
-wt[2] = {'mqttpub.lua', 0, 30}
+wt[2] = {'chck_mem.lua', 0, 30}
+wt[3] = {'mqttpub.lua', 0, 30}
+
 
 local dispatch = function()
     local tm = time.get()

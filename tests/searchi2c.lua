@@ -1,6 +1,10 @@
 do
-    SDA = 21
-    SCL = 22
+    -- SDA = 21
+    -- SCL = 22
+    SDA = 16
+    SCL = 17
+
+
     print('SDA = '..SDA..', SCL = '..SCL..'\n----------------')
     print('Be Patient!')
     addr = 2

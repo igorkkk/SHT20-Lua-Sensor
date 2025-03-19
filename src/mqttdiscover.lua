@@ -43,6 +43,14 @@ do
                 value_template = "{{ value_json.heap }}",
                 unique_id = dat.device_id .. "_hp"
             },
+            sht20testreg = {
+                p = "sensor",
+                name = 'Регистр',
+                device_class = "data_size",
+                unit_of_measurement = "B",
+                value_template = "{{ value_json._Reg }}",
+                unique_id = dat.device_id .. "_reg"
+            },
             sht20testswitch = {
                 p = "switch",
                 name = 'Еще Нажми Меня',

@@ -1,28 +1,21 @@
 do
     local prt = prt or print
-    local brk = dat.brk
-    dat.brk = nil
-    local port = dat.port
-    dat.port = nil
+    local brk = dat.brk; dat.brk = nil
+    local port = dat.port; dat.port = nil
     local subscribe, merror, newm, mconnect, getmqtt
     dat.killm = 0
 
     getmqtt = tmr.create()
     getmqtt:alarm(35000, tmr.ALARM_AUTO, function(t)
         if dat.killm ~= 0 then prt('!mqttset: dat.killm:', dat.killm) end
-        
         dat.killm = dat.killm + 1
-
-
         if dat.killm > 5 then
             if m then m:close() ; m = nil end
             dat.broker = false
         end
         if dat.killm > 6 then
-            if not m then
-                mconnect(newm())
-            else
-                m:connect(brk, port, 0, 0, subscribe, merror)
+            if not m then mconnect(newm())
+            else m:connect(brk, port, 0, 0, subscribe, merror)
             end
         end
     end)
@@ -33,6 +26,7 @@ do
         dat.broker = true
         con:subscribe(dat.clnt.."/com/#", 0)
         con:publish(dat.clnt..'/available', "On", 0, 0)
+        askfl('mqttpub.lua')
         prt("mqttset: Subscribed at '"..dat.clnt.."/com/#'")
     end
 
@@ -68,11 +62,9 @@ do
 
     function mconnect(con)
         if dat.ip then
-        prt('mqttset: Now connect to ', brk, port)
-        con:connect(brk, port, 0, 0, subscribe, merror)
-        else
-            dat.killm = 7
-        end
+            prt('mqttset: Now connect to ', brk, port)
+            con:connect(brk, port, 0, 0, subscribe, merror)
+        else dat.killm = 7 end
     end
     mconnect(newm())
 end
