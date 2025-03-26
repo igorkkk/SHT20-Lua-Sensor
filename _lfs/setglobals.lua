@@ -6,19 +6,19 @@ askfl = function(t, e)
         return r
     elseif type(t) == 'string' then
         -- if t:sub(-4) == '.lua' then t = t:sub(1, -5) end
-        if not file.exists(t) then
-            if t:sub(-4) == '.lua' then
-                t = t:sub(1, -4); t = t .. 'lc'
-            end
-        end
-        if file.exists(t) then
-            if e then
-                node.task.post(function() dofile(t)(e) end)
-            else
-                node.task.post(function() dofile(t) end)
-            end
+        -- if not file.exists(t) then
+        --     if t:sub(-4) == '.lua' then
+        --         t = t:sub(1, -4); t = t .. 'lc'
+        --     end
+        -- end
+        -- if file.exists(t) then
+        if e then
+            node.task.post(function() dofile(t)(e) end)
+        else
+            node.task.post(function() dofile(t) end)
         end
     end
+    -- end
 end
 
 do

@@ -5,6 +5,7 @@ do
 		return
 	else
 		wth.heap = node.heap()
+		wth.binary = math.random(1, 10) > 5 and 'On' or 'Off'
 		local prt = prt or print
 		local ok, json = pcall(sjson.encode, wth)
 		wth.heap = nil

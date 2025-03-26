@@ -1,3 +1,4 @@
+if not dat.broker then return end
 do
     dat = dat or {}
     dat.device_id = 'sht20test' .. dat.chip_id
@@ -63,6 +64,16 @@ do
                 state_on = 'On',
                 state_off = 'Off',
                 unique_id = dat.device_id .. "_sw"
+            },
+            sht20testbinary = {
+                p = "binary_sensor",
+                name = 'Смотри Меня',
+                device_class = "light",
+                topic = "SHT20/421C699E/state",
+                value_template = "{{ value_json.binary }}",
+                payload_on = 'On',
+                payload_off = 'Off',
+                unique_id = dat.device_id .. "_bs"
             }
         },
         state_topic = 'SHT20/421C699E/state',
